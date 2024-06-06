@@ -9,6 +9,12 @@ on:
   pull_request:
     paths: [ "Application/**", ".github/workflows/**" ]
 
+env:
+  registryName: ${{ secrets.ACR_LOGIN_SERVER }}
+  repositoryName: wth/dotnetcoreapp
+  dockerFolderPath: Application/src/RazoePagesTestSample
+  tag: ${{ github.run_number }}
+
 jobs:
   build:
 
@@ -26,3 +32,10 @@ jobs:
       run: dotnet build Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj --no-restore
     - name: Test
       run: dotnet test Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj --no-build --verbosity normal
+  build2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name:  Docker login
+        run: docker login $registryName -u ${{ secrets.ACR_USERNAME }} -p ${{ secrets.ACR_PASSWORD }}
+          
