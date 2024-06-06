@@ -5,10 +5,12 @@ jobs:
   
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      - uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_SERVICE_PRINCIPAL }}
       - uses: Azure/arm-deploy@v2
         with:
-          subscriptionId: ${{ secrets.AZURE_SERVICE_PRINCIPAL.subscriptionId }}
-          resourceGroupName: ${{ vars.RESOURCE_GROUP }}
-          template: <path/to/azuredeploy.json>
-        
-            
+          resourceGroupName: github-action-arm-rg
+          template: ./../InfrastructureAsCode/main.bicep
+          additionalArguments: "--what-if --rollback-on-error --what-if-exclude-change-types Create Ignore"
