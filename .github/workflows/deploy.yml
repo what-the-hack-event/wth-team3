@@ -13,5 +13,5 @@ jobs:
         with:
           subscriptionId: ${{ secrets.AZURE_SERVICE_PRINCIPAL.subscriptionId }}
           resourceGroupName: ${{ vars.RESOURCE_GROUP }}
-          template: ./../InfrastructureAsCode/main.bicep
+          template: ./InfrastructureAsCode/main.bicep
           additionalArguments: "--what-if --rollback-on-error --what-if-exclude-change-types Create Ignore"
