@@ -1,0 +1,11 @@
+on: workflow_dispatch
+name: Deploy Azure Resource Manager (ARM) Template
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Azure/arm-deploy@v2
+        with:
+          subscriptionId: ${{ AZURE_SERVICE_PRINCIPAL.subscriptionId }}
+          resourceGroupName: ${{ RESOURCE_GROUP }}
+          template: <path/to/azuredeploy.json>
