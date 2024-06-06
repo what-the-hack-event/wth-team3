@@ -11,6 +11,6 @@ jobs:
           creds: ${{ secrets.AZURE_SERVICE_PRINCIPAL }}
       - uses: Azure/arm-deploy@v2
         with:
-          resourceGroupName: github-action-arm-rg
+          resourceGroupName: ${{ vars.RESOURCE_GROUP }}
           template: ./../InfrastructureAsCode/main.bicep
           additionalArguments: "--what-if --rollback-on-error --what-if-exclude-change-types Create Ignore"
