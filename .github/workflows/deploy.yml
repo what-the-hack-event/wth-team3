@@ -4,6 +4,9 @@ jobs:
   build-and-deploy:
   
     runs-on: ubuntu-latest
+    env:
+      ResourceGroupName: github-action-arm-rg
+      ResourceGroupLocation: "UK South"
     steps:
       - uses: actions/checkout@v4
       - uses: azure/login@v2
