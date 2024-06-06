@@ -4,15 +4,15 @@
 	"features": {
 		"ghcr.io/devcontainers/features/azure-cli:1": {
 			"installBicep": true,
-			"version": "latest",
+			"version": "latest"
+		}
+	},
 	"customizations": {
-			"vscode": {
-				"extensions": [
-					"vsls-contrib.codetour",
-					"GitHub.copilot",
-					"GitHub.copilot-chat"
-				]
-			}
+		"vscode": {
+			"extensions": [
+				"GitHub.copilot",
+				"GitHub.copilot-chat"
+			]
+		}
 	}
-}
-}
+}	
