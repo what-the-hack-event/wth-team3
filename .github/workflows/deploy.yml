@@ -11,7 +11,7 @@ jobs:
           creds: ${{ secrets.AZURE_SERVICE_PRINCIPAL }}
       - uses: Azure/arm-deploy@v2
         with:
-          subscriptionId: ${{ secerts.AZURE_SERVICE_PRINCIPAL.subscriptionId }}
+          subscriptionId: ${{ secrets.AZURE_SERVICE_PRINCIPAL.subscriptionId }}
           resourceGroupName: ${{ vars.RESOURCE_GROUP }}
           template: ./main.bicep
           additionalArguments: "--what-if --rollback-on-error --what-if-exclude-change-types Create Ignore"
