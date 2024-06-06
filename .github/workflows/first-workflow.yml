@@ -1,10 +1,16 @@
 
+on:
+    workflow_dispatch:
+     
 jobs:
   job1:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
     steps:
       - name: Step 1
         run: echo "step1"
       - name: Step 2
         run: echo "step2"
-        
+
