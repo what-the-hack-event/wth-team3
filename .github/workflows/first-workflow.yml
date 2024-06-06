@@ -12,5 +12,16 @@ jobs:
       - name: Step 1
         run: echo "step1"
       - name: Step 2
-        run: echo "step2"
+        run: echo "step2",
+        
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
 
