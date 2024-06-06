@@ -1,0 +1,6 @@
+env:
+  registryName: ${{ Microsoft.ContainerRegistry/registries@2020-11-01-preview.azurecr.io }},
+  repositoryName: wth/dotnetcoreapp,
+  dockerFolderPath: Application/src/RazoePagesTestSample,
+  tag: github.run_number
+  
