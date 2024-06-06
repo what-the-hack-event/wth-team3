@@ -5,9 +5,9 @@ name: .NET
 
 on:
   push:
-    paths: [ "Application/**" ]
+    paths: [ "Application/**", ".github/workflows/**" ]
   pull_request:
-    paths: [ "Application/**" ]
+    paths: [ "Application/**", ".github/workflows/**" ]
 
 jobs:
   build:
