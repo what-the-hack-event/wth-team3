@@ -7,8 +7,8 @@ jobs:
     steps:
       - uses: Azure/arm-deploy@v2
         with:
-          subscriptionId: ${{ env.AZURE_SERVICE_PRINCIPAL.subscriptionId }}
-          resourceGroupName: ${{ env.RESOURCE_GROUP }}
+          subscriptionId: ${{ secrets.AZURE_SERVICE_PRINCIPAL.subscriptionId }}
+          resourceGroupName: ${{ vars.RESOURCE_GROUP }}
           template: <path/to/azuredeploy.json>
         
             
